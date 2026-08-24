@@ -31,7 +31,7 @@ script.js    -> menu mobile, tema, digitação, validação do formulário
 
 ## Checklist antes de entregar
 
-- [x] Nome completo e e-mail reais preenchidos
+- [X] Nome completo e e-mail reais preenchidos
 - [ ] Site publicado (link acessível de outro dispositivo, sem `localhost`)
 - [ ] Repositório público no GitHub com o código-fonte completo
 - [ ] Testado o formulário de contato (validação + mensagem de sucesso)
