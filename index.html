@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- trocar "Gui" pelo nome completo aqui e na meta description antes de publicar -->
+  <title>Gui - Desenvolvedor .NET | Portfólio</title>
+  <meta name="description" content="Portfólio pessoal de Gui, desenvolvedor júnior .NET/C#, estudante de Ciência da Computação.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<!-- data-theme controla a paleta dark/light, trocado via JS -->
+<body data-theme="dark">
+
+  <!-- barra de título, estilo editor de código -->
+  <header class="title-bar">
+    <div class="title-bar__dots" aria-hidden="true">
+      <span class="dot dot--red"></span>
+      <span class="dot dot--yellow"></span>
+      <span class="dot dot--green"></span>
+    </div>
+    <span class="title-bar__label">gui@portfolio: zsh</span>
+
+    <!-- só aparece em telas pequenas -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="tab-bar">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- menu de navegação, uma aba por seção, fica visível em qualquer ponto da página -->
+  <nav class="tab-bar" id="tab-bar" aria-label="Navegação principal">
+    <a href="#sobre" class="tab is-active" data-tab="sobre">
+      <span class="tab__dot tab__dot--js" aria-hidden="true"></span>sobre.js
+    </a>
+    <a href="#formacao" class="tab" data-tab="formacao">
+      <span class="tab__dot tab__dot--json" aria-hidden="true"></span>formacao.json
+    </a>
+    <a href="#portfolio" class="tab" data-tab="portfolio">
+      <span class="tab__dot tab__dot--md" aria-hidden="true"></span>portfolio.md
+    </a>
+    <a href="#contato" class="tab" data-tab="contato">
+      <span class="tab__dot tab__dot--html" aria-hidden="true"></span>contato.html
+    </a>
+  </nav>
+
+  <main>
+    <!-- seção sobre mim -->
+    <section id="sobre" class="pane" aria-labelledby="sobre-title">
+      <h1 id="sobre-title" class="pane__file-label">sobre.js</h1>
+
+      <div class="terminal">
+        <p class="terminal__prompt">
+          <span class="prompt__user">gui</span><span class="prompt__at">@</span><span class="prompt__host">portfolio</span><span class="prompt__sep">:</span><span class="prompt__path">~</span><span class="prompt__dollar">$</span>
+          <span id="typed-command" class="typed"></span><span class="cursor" aria-hidden="true">▌</span>
+        </p>
+        <!-- aria-live avisa leitores de tela conforme o texto aparece -->
+        <p class="terminal__output" id="typed-output" aria-live="polite"></p>
+      </div>
+
+      <div class="code-block" aria-label="Sobre mim">
+        <p class="line"><span class="tok-comment">// Desenvolvedor júnior .NET/C#, atuando como PJ (contractor) via Iterative,</span></p>
+        <p class="line"><span class="tok-comment">// alocado no time da ConectCar.</span></p>
+        <p class="line"><span class="tok-comment">// No dia a dia trabalho com microsserviços em Azure: AKS, Key Vault,</span></p>
+        <p class="line"><span class="tok-comment">// Service Bus, Application Insights e SQL Server.</span></p>
+        <p class="line"><span class="tok-comment">// Sou o único júnior do time, o que me obriga (e ajuda) a aprender</span></p>
+        <p class="line"><span class="tok-comment">// rápido e a perguntar sem medo de errar.</span></p>
+        <p class="line">&nbsp;</p>
+        <p class="line"><span class="tok-comment">// Baseado em Alfenas, MG, Brasil.</span></p>
+        <p class="line">&nbsp;</p>
+        <p class="line"><span class="tok-keyword">const</span> <span class="tok-var">hobbies</span> = [</p>
+        <p class="line">&nbsp;&nbsp;<span class="tok-string">"mestrar RPG de mesa"</span>,</p>
+        <p class="line">&nbsp;&nbsp;<span class="tok-string">"videogame"</span>,</p>
+        <p class="line">&nbsp;&nbsp;<span class="tok-string">"escrita e poesia"</span>,</p>
+        <p class="line">&nbsp;&nbsp;<span class="tok-string">"self-hosting em servidor doméstico"</span></p>
+        <p class="line">];</p>
+      </div>
+    </section>
+
+    <!-- seção formação -->
+    <section id="formacao" class="pane" aria-labelledby="formacao-title">
+      <h2 id="formacao-title" class="pane__file-label">formacao.json</h2>
+
+      <div class="code-block" aria-label="Formação">
+        <p class="line"><span class="tok-punc">{</span></p>
+        <p class="line">&nbsp;&nbsp;<span class="tok-key">"curso"</span><span class="tok-punc">:</span> <span class="tok-string">"Bacharelado em Ciência da Computação (EaD)"</span><span class="tok-punc">,</span></p>
+        <p class="line">&nbsp;&nbsp;<span class="tok-key">"instituicao"</span><span class="tok-punc">:</span> <span class="tok-string">"UNINTER"</span><span class="tok-punc">,</span></p>
+        <p class="line">&nbsp;&nbsp;<span class="tok-key">"status"</span><span class="tok-punc">:</span> <span class="tok-string">"Em andamento"</span><span class="tok-punc">,</span></p>
+        <p class="line">&nbsp;&nbsp;<span class="tok-key">"formacao_complementar"</span><span class="tok-punc">:</span> <span class="tok-string">"Itera360 (ex-aluno e monitor)"</span><span class="tok-punc">,</span></p>
+        <p class="line">&nbsp;&nbsp;<span class="tok-key">"disciplinas_concluidas"</span><span class="tok-punc">:</span> <span class="tok-punc">[</span></p>
+        <p class="line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-string">"Análise de Sistemas"</span><span class="tok-punc">,</span></p>
+        <p class="line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-string">"Matemática Discreta"</span><span class="tok-punc">,</span></p>
+        <p class="line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-string">"Engenharia de Software"</span><span class="tok-punc">,</span></p>
+        <p class="line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-string">"Circuitos Digitais"</span></p>
+        <p class="line">&nbsp;&nbsp;<span class="tok-punc">]</span><span class="tok-punc">,</span></p>
+        <p class="line">&nbsp;&nbsp;<span class="tok-key">"em_andamento"</span><span class="tok-punc">:</span> <span class="tok-punc">[</span></p>
+        <p class="line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-string">"Organização de Computadores"</span><span class="tok-punc">,</span></p>
+        <p class="line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-string">"Projeto Extensionista: app de defesa do consumidor (React/JavaScript)"</span></p>
+        <p class="line">&nbsp;&nbsp;<span class="tok-punc">]</span></p>
+        <p class="line"><span class="tok-punc">}</span></p>
+      </div>
+    </section>
+
+    <!-- seção portfólio -->
+    <section id="portfolio" class="pane" aria-labelledby="portfolio-title">
+      <h2 id="portfolio-title" class="pane__file-label">portfolio.md</h2>
+
+      <div class="md-block">
+        <p class="line"><span class="tok-heading"># Projetos</span></p>
+        <p class="line">&nbsp;</p>
+        <p class="line">Alguns dos projetos pessoais que venho construindo fora do trabalho, a maioria usando <em>Spec Driven Development</em> e bastante experimentação de arquitetura.</p>
+      </div>
+
+      <div class="repo-grid">
+        <article class="repo-card">
+          <h3 class="repo-card__name">
+            <a href="https://github.com/herobsss15/LoreWeaver" target="_blank" rel="noopener noreferrer">
+              LoreWeaver <span class="repo-card__arrow" aria-hidden="true">↗</span>
+            </a>
+          </h3>
+          <p class="repo-card__desc">Plataforma colaborativa de worldbuilding e mesa de RPG virtual: fichas de personagem, busca de regras de D&amp;D 5e e videoconferência self-hosted via LiveKit.</p>
+          <div class="repo-card__tags">
+            <span class="tag tag--blue">ASP.NET Core</span>
+            <span class="tag tag--purple">Blazor Server</span>
+            <span class="tag tag--green">Self-hosted</span>
+          </div>
+        </article>
+
+        <article class="repo-card">
+          <h3 class="repo-card__name">
+            <a href="https://github.com/herobsss15/Controlume" target="_blank" rel="noopener noreferrer">
+              Controlume <span class="repo-card__arrow" aria-hidden="true">↗</span>
+            </a>
+          </h3>
+          <p class="repo-card__desc">Sistema de PDV construído do zero para uma loja de discos, CDs e itens avulsos: controle de caixa, sangria, múltiplas formas de pagamento e papéis de usuário.</p>
+          <div class="repo-card__tags">
+            <span class="tag tag--blue">ASP.NET Core 10</span>
+            <span class="tag tag--purple">Blazor Server</span>
+            <span class="tag tag--yellow">PostgreSQL</span>
+          </div>
+        </article>
+
+        <article class="repo-card">
+          <h3 class="repo-card__name">Middle-Earth Walk</h3>
+          <p class="repo-card__desc">App gamificado que converte a distância percorrida a pé em progresso real ao longo das rotas de O Senhor dos Anéis, sobre um mapa em SVG.</p>
+          <div class="repo-card__tags">
+            <span class="tag tag--blue">React</span>
+            <span class="tag tag--green">SVG</span>
+          </div>
+          <span class="repo-card__status">em desenvolvimento</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- seção contato -->
+    <section id="contato" class="pane" aria-labelledby="contato-title">
+      <h2 id="contato-title" class="pane__file-label">contato.html</h2>
+
+      <div class="md-block">
+        <p class="line">Quer trocar uma ideia sobre algum projeto, oportunidade ou só falar de RPG? Manda uma mensagem:</p>
+      </div>
+
+      <!-- novalidate desliga a validação nativa: quem valida os campos é o JS -->
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="form-group">
+          <label for="nome"><span class="tok-comment">// nome</span></label>
+          <input type="text" id="nome" name="nome" placeholder="seu nome completo" autocomplete="name">
+          <span class="form-error" id="error-nome" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email"><span class="tok-comment">// email</span></label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email">
+          <span class="form-error" id="error-email" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="mensagem"><span class="tok-comment">// mensagem</span></label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="escreva sua mensagem..."></textarea>
+          <span class="form-error" id="error-mensagem" role="alert"></span>
+        </div>
+
+        <button type="submit" class="btn-submit">$ enviar --mensagem</button>
+      </form>
+
+      <div class="md-block contact-links">
+        <p class="line"><span class="tok-comment">// outros canais</span></p>
+        <p class="line">
+          <a href="https://github.com/herobsss15" target="_blank" rel="noopener noreferrer">github.com/herobsss15</a>
+        </p>
+        <p class="line">
+          <!-- trocar pelo e-mail real antes de publicar -->
+          <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- barra de status -->
+  <footer class="status-bar">
+    <div class="status-bar__left">
+      <span class="status-item" id="current-section">sobre.js</span>
+    </div>
+    <div class="status-bar__right">
+      <button id="theme-toggle" class="status-item status-item--btn" aria-label="Alternar entre tema claro e escuro">
+        <span id="theme-icon" aria-hidden="true">☾</span> tema
+      </button>
+      <span class="status-item">UTF-8</span>
+      <span class="status-item">LF</span>
+    </div>
+  </footer>
+
+  <!-- modal usado pelo JS para simular o envio do formulário -->
+  <div id="modal-overlay" class="modal-overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal__header">
+        <span id="modal-title">console.log()</span>
+        <button id="modal-close" class="modal__close" aria-label="Fechar mensagem">✕</button>
+      </div>
+      <p id="modal-message" class="modal__message"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
