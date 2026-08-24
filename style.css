@@ -282,19 +282,21 @@ main {
   overflow-x: auto;
 }
 
+/* número da linha via posicionamento absoluto, não grid: uma coluna de
+   grid com 1fr insistia em herdar a largura total do conteúdo como
+   mínimo (nowrap não permite ponto de quebra pro cálculo do mínimo), e
+   como a linha em si tem largura fixa (é um bloco normal), esse conflito
+   forçava o texto a quebrar mesmo com white-space: nowrap. Com padding
+   fixo + posicionamento absoluto pro número não existe esse cálculo de
+   coluna nenhum, então overflow-x: auto no container funciona de forma
+   previsível. */
 .code-block .line,
 .md-block .line {
   counter-increment: line;
-  display: grid;
-  /* minmax(0, 1fr), não só 1fr: sem o mínimo explícito em 0, o navegador
-     usa o tamanho do conteúdo (largura da linha inteira, já que nowrap não
-     permite quebra) como mínimo da coluna, e como a linha tem largura fixa
-     (bloco normal, não cresce), esse conflito faz o texto quebrar mesmo com
-     white-space: nowrap. Com o mínimo em 0 a coluna mantém o tamanho e o
-     conteúdo estoura pra fora, aí sim rolando na horizontal. */
-  grid-template-columns: 3rem minmax(0, 1fr);
-  column-gap: 1rem;
-  padding: 0.15rem 1.25rem;
+  position: relative;
+  /* recuo esquerdo = padding original (1.25rem) + largura do número
+     (3rem) + espaço entre eles (1rem) */
+  padding: 0.15rem 1.25rem 0.15rem 5.25rem;
   /* <p> tem margem vertical padrão do navegador (~1em); sem zerar isso
      cada linha fica com um espaçamento enorme entre si */
   margin: 0;
@@ -308,13 +310,18 @@ main {
 }
 
 /* md-block também é usado para parágrafos de prosa (portfolio.md,
-   contato.html), então aqui o texto quebra normalmente */
+   contato.html), então aqui o texto quebra normalmente; como o recuo é
+   padding (não coluna de grid), toda linha quebrada também fica alinhada */
 .md-block .line {
   white-space: normal;
 }
 .code-block .line::before,
 .md-block .line::before {
   content: counter(line);
+  position: absolute;
+  left: 1.25rem;
+  top: 0.15rem;
+  width: 3rem;
   color: var(--text-dim);
   text-align: right;
   user-select: none;
@@ -592,8 +599,14 @@ main {
 
   .code-block .line,
   .md-block .line {
-    grid-template-columns: 2rem minmax(0, 1fr);
+    /* recuo esquerdo = padding (1.25rem) + número menor no mobile (2rem)
+       + espaço (1rem) */
+    padding-left: 4.25rem;
     font-size: 0.85rem;
+  }
+  .code-block .line::before,
+  .md-block .line::before {
+    width: 2rem;
   }
 
   .status-bar__left span:not(#current-section) {
